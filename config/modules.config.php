@@ -13,5 +13,13 @@
 return [
     'Zend\Router',
     'Zend\Validator',
+    'DoctrineModule',
+    'DoctrineORMModule',
+    'ZfcBase',
+    'ZfcUser',
+    'ZfcUserDoctrineORM',
+    'ZfcRbac',
+    'Rbac',
+    'AsseticBundle',
     'Application',
 ];

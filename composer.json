@@ -15,7 +15,17 @@
         "php": "^5.6 || ^7.0",
         "zendframework/zend-component-installer": "^1.0 || ^0.7 || ^1.0.0-dev@dev",
         "zendframework/zend-mvc": "^3.0.1",
-        "zfcampus/zf-development-mode": "^3.0"
+        "zfcampus/zf-development-mode": "^3.0",
+        "zf-commons/zfc-user-doctrine-orm": "*",
+        "zf-commons/zfc-rbac": "*",
+        "doctrine/dbal": "*",
+        "doctrine/doctrine-orm-module": "*",
+        "doctrine/migrations": "dev-master",
+        "doctrine/data-fixtures": "*",
+        "doctrine/dbal": "*",
+        "doctrine/doctrine-orm-module": "*",
+        "doctrine/migrations": "dev-master",
+        "doctrine/data-fixtures": "*"
     },
     "autoload": {
         "psr-4": {
@@ -38,6 +48,18 @@
             "@development-enable"
         ],
         "serve": "php -S 0.0.0.0:8080 -t public public/index.php",
-        "test": "phpunit"
+        "test": "phpunit",
+        "post-install-cmd": [
+            "sh bin/submodules_init.sh",
+            "sh bin/create_folder.sh",
+            "sh bin/templatemap_gen.sh",
+            "sh bin/submodules_init.sh"
+        ],
+        "post-update-cmd": [
+            "sh bin/submodules_init.sh",
+            "sh bin/create_folder.sh",
+            "sh bin/templatemap_gen.sh",
+            "sh bin/submodules_init.sh"
+        ]
     }
 }
