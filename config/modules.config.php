@@ -11,15 +11,17 @@
  * This should be an array of module namespaces used in the application.
  */
 return [
-    'Zend\Router',
-    'Zend\Validator',
+    'AsseticBundle',
     'DoctrineModule',
     'DoctrineORMModule',
     'ZfcBase',
     'ZfcUser',
     'ZfcUserDoctrineORM',
+    'GoalioRememberMe',
+    'RememberMe',
     'ZfcRbac',
-    'Rbac',
-    'AsseticBundle',
+    'Users',
+    'ScnSocialAuth',
+    'ScnSocialAuthDoctrineORM',
     'Application',
 ];

@@ -1,0 +1,23 @@
+<?php
+
+$status         = $this->data["status"];
+$content        = $this->data["content"];
+$linkTemplate   = '<a href="%s"></a>';
+$link           = "";
+
+switch ($status){
+    case "success":
+        $link   = sprintf($linkTemplate, "/user/login", "Авторизоваться на сайте");
+        break;
+    case "fail":
+        $link   = sprintf($linkTemplate, "/user/register", "Регистрация");
+        break;
+}
+
+?>
+
+<h3><?php print $content; ?></h3>
+<div style="text-align: center;">
+    <?php print $link; ?>
+</div>
+
