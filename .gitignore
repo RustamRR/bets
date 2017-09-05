@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 nbproject
 ._*
 .vagrant
@@ -22,3 +23,7 @@ public/contest/assets
 composer.json
 module/*/autoload_classmap.php
 module/*/template_map.php
+.vagrant/
+config/development.config.php
+!data/cache/.gitkeep
+phpunit.xml
