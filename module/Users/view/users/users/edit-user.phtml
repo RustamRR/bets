@@ -1,0 +1,18 @@
+
+<h1>Редактированые данных аккаунта</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <?php
+            $form->prepare();
+            $form->setAttribute('action', "/users/user-edit/{$id}");
+            $form->setAttribute('method', 'post');
+            $form->setAttribute('autocomplete', 'off');
+            ?>
+            <?php echo $this->partial('_form.phtml', ['form' => $form]); ?>
+        </div>
+    </div>
+</div>
+
+

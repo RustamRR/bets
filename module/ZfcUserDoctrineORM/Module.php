@@ -1,0 +1,55 @@
+<?php
+
+namespace ZfcUserDoctrineORM;
+
+use Doctrine\ORM\Mapping\Driver\XmlDriver;
+
+class Module
+{
+    public function onBootstrap($e)
+    {
+        $app     = $e->getParam('application');
+        $sm      = $app->getServiceManager();
+
+    }
+
+    public function getAutoloaderConfig()
+    {
+        return array(
+            'Zend\Loader\ClassMapAutoloader' => array(
+                __DIR__ . '/autoload_classmap.php',
+            ),
+            'Zend\Loader\StandardAutoloader' => array(
+                'namespaces' => array(
+                    __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
+                ),
+            ),
+        );
+    }
+
+    public function getServiceConfig()
+    {
+        return array(
+            'aliases' => array(
+                'zfcuser_doctrine_em' => 'Doctrine\ORM\EntityManager',
+            ),
+            'factories' => array(
+                'zfcuser_module_options' => function ($sm) {
+                    $config = $sm->get('Configuration');
+                    return new Options\ModuleOptions(isset($config['zfcuser']) ? $config['zfcuser'] : array());
+                },
+                'zfcuser_user_mapper' => function ($sm) {
+                    return new \ZfcUserDoctrineORM\Mapper\User(
+                        $sm->get('zfcuser_doctrine_em'),
+                        $sm->get('zfcuser_module_options')
+                    );
+                },
+            ),
+        );
+    }
+
+    public function getConfig()
+    {
+        return include __DIR__ . '/config/module.config.php';
+    }
+}

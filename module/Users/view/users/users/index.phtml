@@ -1,0 +1,5 @@
+<div style="float:left; padding-right:16px;"><?php echo $this->gravatar($this->zfcUserIdentity()->getEmail()) ?></div>
+<h3><?php echo $this->translate('Hello'); ?>, <?php echo $this->zfcUserDisplayName() ?>!</h3>
+<a href="<?php print $this->url('users/edit-user', array("id" => $this->zfcUserIdentity()->getId())); ?>">Редактировать данные</a><br>
+<a href="<?php echo $this->url('zfcuser/logout') ?>">[<?php echo $this->translate('Sign Out'); ?>]</a>
+<div style="clear:both;"></div>
