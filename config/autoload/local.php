@@ -24,7 +24,7 @@ return [
             'orm_default' => [
                 'driverClass' => 'Doctrine\DBAL\Driver\PDOPgSql\Driver',
                 'params' => [
-                    'host' => '179.43.139.98',
+                    'host' => 'localhost',
                     'port' => '5432',
                     'user' => 'admin_csgobets',
                     'password' => '9rTJSovoRK',

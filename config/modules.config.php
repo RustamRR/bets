@@ -11,6 +11,18 @@
  * This should be an array of module namespaces used in the application.
  */
 return [
+    'Zend\Cache',
+    'Zend\Mail',
+    'Zend\Navigation',
+    'Zend\Paginator',
+    'Zend\I18n',
+    'Zend\Log',
+    'Zend\Serializer',
+    'Zend\Session',
+    'Zend\Db',
+    'Zend\Form',
+    'Zend\InputFilter',
+    'Zend\Filter',
     'AsseticBundle',
     'DoctrineModule',
     'DoctrineORMModule',

@@ -80,7 +80,7 @@ class User implements UserInterface
      * @ORM\ManyToMany(targetEntity="Users\Entity\HierarchicalRole")
      * @ORM\JoinTable(name="users_hierarchicalrole",
      *   joinColumns={
-     *     @ORM\JoinColumn(name="users_id", referencedColumnName="id", onDelete="CASCADE")
+     *     @ORM\JoinColumn(name="users_id", referencedColumnName="user_id", onDelete="CASCADE")
      *   },
      *   inverseJoinColumns={
      *     @ORM\JoinColumn(name="hierarchicalrole_id", referencedColumnName="id", onDelete="CASCADE")
